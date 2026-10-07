@@ -1,7 +1,5 @@
 ## MongoDb
 
-# WorkOut_Budy
-
 M: MongoDB(DB)
 E: Express(Backend)
 R: ReactJs(Frontend)
