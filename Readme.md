@@ -14,6 +14,7 @@ N: NodeJs(Backend)
 # npm i -g nodemon :- this cmd is use for the install the nodemon    
 # npm i dotenv
 # npm i mongoose
+# npm install cors
 
 Run the application:- npm run dev       
 
@@ -33,3 +34,4 @@ patch           ToDoList/:id -->update a single workout.
 open the backend folder and open the integrated terminal and run cmd :- "npm run dev"
 open the frontend folder and open the integrated terminal and run cmd :- "npm start"
 
+the maine deployment part was completed with the help of my mentor
