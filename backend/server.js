@@ -2,7 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
-const ToDoListRouter = require("./routes/ToDoList")
+const cors = require("cors");
+
+const ToDoListRouter = require("./routes/ToDoList");
 
 dotenv.config();
 
@@ -20,7 +22,6 @@ app.get("/", (req, res) => {
   });
 });
 
-  
 app.use("/api/ToDoList/", ToDoListRouter);
 
 const PORT = process.env.PORT;
@@ -37,4 +38,3 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-

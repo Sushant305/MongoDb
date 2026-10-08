@@ -9,7 +9,9 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchToDoList = async () => {
-      const response = await fetch("/api/ToDoList");
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/ToDoList`,
+      );
       const json = await response.json();
       if (response.ok) {
         // setToDoList(json);

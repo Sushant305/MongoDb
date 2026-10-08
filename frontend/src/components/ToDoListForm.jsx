@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useToDoListContext } from "../hooks/useToDoListContext";
 
 const ToDoListForm = () => {
-  const {dispatch}= useToDoListContext()
+  const { dispatch } = useToDoListContext();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState("");
@@ -10,13 +10,16 @@ const ToDoListForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const toDoList = { title, description };
-    const response = await fetch("/api/ToDoList", {
-      method: "POST",
-      body: JSON.stringify(toDoList),
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/ToDoList`,
+      {
+        method: "POST",
+        body: JSON.stringify(toDoList),
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     const json = await response.json();
     if (!response.ok) {
       setError(json.error);

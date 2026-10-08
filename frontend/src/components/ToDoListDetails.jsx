@@ -1,21 +1,22 @@
 import React from "react";
 import { useToDoListContext } from "../hooks/useToDoListContext";
 
-
 const ToDoListDetails = ({ toDoList }) => {
-    const {dispatch}= useToDoListContext()
+  const { dispatch } = useToDoListContext();
 
-    const handleClick = async () => {
-    const response = await fetch(`/api/toDoList/${toDoList._id}`, {
-      method: "DELETE",
-    });
+  const handleClick = async () => {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/ToDoList/${toDoList._id}`,
+      {
+        method: "DELETE",
+      },
+    );
 
     if (response.ok) {
       dispatch({ type: "DELETE_TODOLIST", payload: toDoList });
     }
-  };  
+  };
 
-  
   return (
     <div className="relative flex h-[250px] w-full flex-col rounded-2xl bg-gradient-to-r from-violet-500 to-indigo-700 p-4 shadow-[0_10px_25px_rgba(0,0,0,0.25)]">
       <div className="flex flex-1 flex-col items-center justify-center text-center text-white">
