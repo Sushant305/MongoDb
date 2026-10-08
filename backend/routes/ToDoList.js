@@ -6,13 +6,13 @@ const {
   createToDoList,
   deleteToDoListById,
   updateToDoListById,
-} = require("../controller/ToDoController");
+} = require("../controller/toDoController");
 
 /*
  * Routes: /api/ToDoList
  * method: GET
  * description: get all the todolist
- * parameters: none
+ * parameters: none 
  * Access : Public
  */
 
